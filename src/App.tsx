@@ -1,34 +1,40 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import teemoCoverPicture from "@assets/teemo.jpg";
+import classes from "@/app.module.scss";
+import { Centered } from "@components/Centered";
+import { TextField } from "@components/CustomTextfield";
+import { useState } from "react";
+import Spacer from "@components/Spacer/Spacer";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [searchValue, setSearchValue] = useState("");
 
   return (
-    <>
-      <div className="hello">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div
+      style={{
+        height: "100%",
+        width: "100%",
+        backgroundColor: "#1C1C1F",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+      }}
+    >
+      <Centered>
+        <img src={teemoCoverPicture} className={classes.teemoCoverImage} />
+        <Spacer size={16} axis="vertical" />
+        <div className={classes.searchbarContainer}>
+          <TextField
+            value={searchValue}
+            className={classes.championSearchTextfield}
+            onChange={(value) => {
+              setSearchValue(value);
+            }}
+          />
+        </div>
+      </Centered>
+    </div>
   );
 }
 

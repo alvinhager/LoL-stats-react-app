@@ -1,3 +1,23 @@
-.hello {
-  background-color: red;
+.teemoCoverImage {
+  width: 800px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.searchbarContainer {
+  width: 1000px;
+  height: 30px;
+  background-color: #515160;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  border-radius: 100px;
+  align-items: center;
+}
+
+.championSearchTextfield {
+  height: 15px;
 }
